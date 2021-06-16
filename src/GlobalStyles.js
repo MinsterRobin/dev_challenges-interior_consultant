@@ -13,6 +13,7 @@ const GlobalStylesSC = createGlobalStyle`
         --color-text-secondary: #828282;
         --color-text-tertiary: #A9A9A9;
         
+        --font-size-tiny: 10px;
         --font-size-very-very-small: 12px;
         --font-size-very-small: 14px;
         --font-size-small: 18px;
@@ -27,11 +28,9 @@ const GlobalStylesSC = createGlobalStyle`
         
         background-color: var(--color-background);
         
-        @media (max-width: 768px) {
-            --font-size-very-very-small: 10px;
-            --font-size-very-small: 12px;
+        @media (max-width: 992px) {
             --font-size-large: 36px;
-            
+
             --padding-size: 20px;
         }
     }

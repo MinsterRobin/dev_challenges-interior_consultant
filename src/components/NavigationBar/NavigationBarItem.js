@@ -3,7 +3,7 @@ import React from "react";
 
 const NavigationItemSC = styled.div`
     position: relative;
-    height: 100%;
+
     display: flex;
     cursor: pointer;
     

@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import React from "react";
+import React, {useState} from "react";
 import Logo from "../Logo";
 import NavigationBarItem from "./NavigationBarItem";
+import hamburger_menu from "../../assets/menu_white.svg";
+import MobileMenu from "./MobileMenu";
 
-const LayoutSC = styled.header`
+const Layout = styled.header`
     background-color: var(--color-background);
     color: var(--color-text-primary);
     width: 100%;
@@ -12,6 +14,18 @@ const LayoutSC = styled.header`
     justify-content: space-between;
     
     margin-bottom: 2rem;
+`;
+
+const HamburgerMenu = styled.img`
+    display: none;
+    
+    width: 30px;
+    align-self: center;
+    cursor: pointer;
+    
+    @media (max-width: 768px) {
+        display: initial;
+    }
 `;
 
 const NavigationItemsLayout = styled.div`
@@ -26,16 +40,23 @@ const NavigationItemsLayout = styled.div`
 `;
 
 const NavigationBar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+
     return(
-        <LayoutSC>
+        <Layout>
             <Logo />
+            <HamburgerMenu src={hamburger_menu} alt={"Hamburger Menu"} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}/>
+
+            <MobileMenu isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen}/>
+
             <NavigationItemsLayout>
                 <NavigationBarItem isCurrentPage={true}>Home</NavigationBarItem>
                 <NavigationBarItem>Collection</NavigationBarItem>
                 <NavigationBarItem>About</NavigationBarItem>
                 <NavigationBarItem>Contact</NavigationBarItem>
             </NavigationItemsLayout>
-        </LayoutSC>
+        </Layout>
     );
 };
 

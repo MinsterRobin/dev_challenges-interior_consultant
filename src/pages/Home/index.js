@@ -9,7 +9,7 @@ import ProfileCard from "../../components/ProfileCard";
 
 const HeroLayout = styled.div`
     flex: 1;
-       
+    position: relative;
     display: grid;
     grid-template-columns: 35% 55%;
     align-items: center;
@@ -36,13 +36,6 @@ const InfosLayout = styled.div`
     @media (max-width: 768px) {
         gap: 1.5rem;
     }
-`;
-
-const ArrowRight = styled.img`
-    margin-left: 10px;
-    width: 20px;
-    position: relative;
-    cursor: pointer;
 `;
 
 const Title = styled.p`
@@ -74,6 +67,13 @@ const ReadMore = styled.p`
     @media (max-width: 768px) {
         font-size: var(--font-size-very-small);
     }
+`;
+
+const ArrowRight = styled.img`
+    margin-left: 10px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
 `;
 
 const GraphicsLayout = styled.div`

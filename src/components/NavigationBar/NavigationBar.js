@@ -10,6 +10,8 @@ const LayoutSC = styled.header`
     
     display: flex;
     justify-content: space-between;
+    
+    margin-bottom: 2rem;
 `;
 
 const NavigationItemsLayout = styled.div`

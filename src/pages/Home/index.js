@@ -4,7 +4,8 @@ import Layout from "./Layout";
 import Footer from "../../components/Footer";
 import styled from "styled-components";
 import interior_photo from "../../assets/photo1.png";
-import profile_picture from "../../assets/photo2.png";
+import arrow_right_white from "../../assets/arrow_right_alt_white_24dp.svg";
+import ProfileCard from "../../components/ProfileCard";
 
 const HeroLayout = styled.div`
     flex: 1;
@@ -14,20 +15,34 @@ const HeroLayout = styled.div`
     align-items: center;
     align-content: center;
     justify-content: space-between;
+    row-gap: 2rem;
     
-    @media (max-width: 768px) {
-        display: block;
+    margin-bottom: 6rem;
+    
+    @media (max-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 `;
 
-const InfosLayout = styled.div`
-    min-width: min-content;
-    
+const InfosLayout = styled.div` 
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-    gap: 45px;
+    gap: 3rem;
+    
+    @media (max-width: 768px) {
+        gap: 1.5rem;
+    }
+`;
+
+const ArrowRight = styled.img`
+    margin-left: 10px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
 `;
 
 const Title = styled.p`
@@ -35,6 +50,10 @@ const Title = styled.p`
     font-family: var(--font-family-secondary);
     font-size: var(--font-size-large);
     font-weight: 500;
+    
+    @media (max-width: 768px) {
+        min-width: auto;
+    }
 `;
 
 const Presentation = styled.p`
@@ -42,7 +61,7 @@ const Presentation = styled.p`
     font-size: var(--font-size-medium);
     font-weight: 400;
     
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
         font-size: var(--font-size-very-small);
     }
 `;
@@ -52,7 +71,7 @@ const ReadMore = styled.p`
     font-size: var(--font-size-small);
     font-weight: 700;
     
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
         font-size: var(--font-size-very-small);
     }
 `;
@@ -65,70 +84,15 @@ const InteriorImage = styled.img`
     width: 100%;
 `;
 
-const ProfileCardLayout = styled.div`
+const ProfileCardContainer = styled.div`
     position: absolute;
     bottom: -5rem;
-    left:40%;
     right: 2rem;
-    background-color: var(--color-background);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 2rem;
-   
-`;
-
-const ProfileCardSubLayout = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     
-    max-width: 410px;
-    
-    margin-bottom: 1rem;
-        
-    div {
-        margin-left: 10px;
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        align-content: space-between;
-        justify-content: space-between;
-    }
-`;
-
-const ProfileCardImage = styled.img`
-    max-width: 40px;
-    border-radius: 50%;
-`;
-
-const ProfileCardH2 =styled.p`
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-very-small);
-    font-weight: 500;
-    
-    @media(max-width: 992px) {
-        font-size: var(--font-size-very-very-small);
-    }
-`;
-
-const ProfileCardH3 = styled.p`
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-very-very-small);
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    
-    @media(max-width: 992px) {
-        font-size: var(--font-size-tiny);
-    }
-`;
-
-const ProfileCardH1 = styled.p`
-    font-family: var(--font-family-secondary);
-    font-size: var(--font-size-medium);
-    font-weight: 700;
-    
-    @media(max-width: 992px) {
-        font-size: var(--font-size-small);
-    }
+    @media (max-width: 992px) {
+        margin-left: 1rem;
+        right: 1rem;
+    }  
 `;
 
 function Index() {
@@ -139,21 +103,14 @@ function Index() {
                 <InfosLayout>
                     <Title>Modern interior</Title>
                     <Presentation>A full-Service residential & commercial interior design and staging company offering professional organizing & eco-services.</Presentation>
-                    <ReadMore>Read More =></ReadMore>
+                    <ReadMore>Read More <ArrowRight src={arrow_right_white}/></ReadMore>
                 </InfosLayout>
 
                 <GraphicsLayout>
                     <InteriorImage src={interior_photo} alt="Interior Photo"/>
-                    <ProfileCardLayout>
-                        <ProfileCardSubLayout>
-                            <ProfileCardImage src={profile_picture} alt={"Profile Picture"}/>
-                            <div>
-                                <ProfileCardH2>Aliza Webber</ProfileCardH2>
-                                <ProfileCardH3>Interior Designer</ProfileCardH3>
-                            </div>
-                        </ProfileCardSubLayout>
-                        <ProfileCardH1>Designed in 2020 by Aliza Webber</ProfileCardH1>
-                    </ProfileCardLayout>
+                    <ProfileCardContainer>
+                        <ProfileCard/>
+                    </ProfileCardContainer>
                 </GraphicsLayout>
             </HeroLayout>
             <Footer/>

@@ -28,7 +28,7 @@ const GlobalStylesSC = createGlobalStyle`
         
         background-color: var(--color-background);
         
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             --font-size-large: 36px;
 
             --padding-size: 20px;

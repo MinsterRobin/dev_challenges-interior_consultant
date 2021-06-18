@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import {useSpring, animated, config} from 'react-spring';
+import {useSpring, animated} from 'react-spring';
 import NavigationBarItem from "./NavigationBarItem";
 import close_button from "../../assets/menu_white.svg";
 

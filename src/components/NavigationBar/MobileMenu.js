@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import {useSpring, animated} from 'react-spring';
 import NavigationBarItem from "./NavigationBarItem";
-import close_button from "../../assets/menu_white.svg";
+import close_button from "../../assets/close_button_white.svg";
 
 const Layout = animated(styled.div`
     position: fixed;
@@ -27,7 +27,13 @@ const CloseButton = styled.img`
     cursor: pointer;
     position: fixed;
     top: 21px;
-    right: 20px; 
+    right: 20px;
+    
+    transition: opacity ease-in-out 80ms;
+    
+    &:hover {
+        opacity: 0.7;
+    }
 `;
 
 const MobileMenu = (props) => {

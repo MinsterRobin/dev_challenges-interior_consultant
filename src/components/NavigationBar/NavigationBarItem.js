@@ -7,6 +7,12 @@ const NavigationItemSC = styled.div`
     display: flex;
     cursor: pointer;
     
+    transition: opacity ease-in-out 80ms;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+    
     p { 
         align-self: center;
         font-family: var(--font-family-primary);

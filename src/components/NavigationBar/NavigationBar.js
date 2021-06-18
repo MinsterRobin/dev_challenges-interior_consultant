@@ -21,7 +21,13 @@ const HamburgerMenu = styled.img`
     
     width: 30px;
     align-self: center;
-    cursor: pointer;
+    cursor: pointer;    
+        
+    transition: opacity ease-in-out 80ms;
+    
+    &:hover {
+        opacity: 0.7;
+    }
     
     @media (max-width: 768px) {
         display: initial;

@@ -5,6 +5,8 @@ import NavigationBarItem from "./NavigationBarItem";
 import close_button from "../../assets/close_button_white.svg";
 
 const Layout = animated(styled.div`
+    display: none;
+    
     position: fixed;
     width: 100%;
     height: 100%;
@@ -14,20 +16,23 @@ const Layout = animated(styled.div`
 
     background-color: var(--color-background);
     
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    
+    @media (max-width: 768px) {
+        display: flex;
+    }
 `);
 
 const CloseButton = styled.img`
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     position: fixed;
-    top: 21px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     
     transition: opacity ease-in-out 80ms;
     

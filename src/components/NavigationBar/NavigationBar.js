@@ -13,7 +13,7 @@ const Layout = styled.header`
     display: flex;
     justify-content: space-between;
     
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 `;
 
 const HamburgerMenu = styled.img`
